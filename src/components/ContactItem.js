@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ContactItem({ item }) {
+export default function ContactItem({ item, onDeleteContact }) {
   return (
     <>
       <div>
@@ -10,6 +10,8 @@ export default function ContactItem({ item }) {
         />
         <p>{item.name}</p>
         <p>{item.phoneNumber}</p>
+        <button>수정</button>
+        <button onClick={() => onDeleteContact(item.id)}>삭제</button>
       </div>
     </>
   );
