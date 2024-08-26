@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import * as S from './App.styled';
+import ContactForm from './components/ContactForm';
+import ContactList from './components/ContactList';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <S.Title className='title'>연락처</S.Title>
+      <S.RowFlex>
+        <S.FlexBox>
+          <ContactForm />
+        </S.FlexBox>
+        <S.FlexBox>
+          <ContactList />
+        </S.FlexBox>
+      </S.RowFlex>
     </div>
   );
 }
