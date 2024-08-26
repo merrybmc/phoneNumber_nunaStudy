@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ContactItem() {
+export default function ContactItem({ item }) {
   return (
     <>
       <div>
@@ -8,7 +8,8 @@ export default function ContactItem() {
           width={50}
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/542px-Unknown_person.jpg'
         />
-        <p>이름</p>
+        <p>{item.name}</p>
+        <p>{item.phoneNumber}</p>
       </div>
     </>
   );
