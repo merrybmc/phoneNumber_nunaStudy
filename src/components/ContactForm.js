@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import * as S from './ContctForm.styled';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -26,24 +27,25 @@ export default function ContactForm() {
   return (
     <>
       <form onSubmit={addContact}>
-        <div>
-          <label>이름</label>
-          <input
+        <S.Title>연락처 추가</S.Title>
+        <S.InputBox>
+          <S.SubTitle>이름</S.SubTitle>
+          <S.Input
             type='text'
             value={name}
             placeholder='이름을 입력하세요'
             onChange={(e) => getName(e)}
           />
-        </div>
-        <div>
-          <label>전화번호</label>
-          <input
+        </S.InputBox>
+        <S.InputBox>
+          <S.SubTitle>전화번호</S.SubTitle>
+          <S.Input
             type='number'
             value={phoneNumber}
             placeholder='전화번호를 입력해주세요'
             onChange={(e) => getName(e)}
           />
-        </div>
+        </S.InputBox>
         <button>추가</button>
       </form>
     </>

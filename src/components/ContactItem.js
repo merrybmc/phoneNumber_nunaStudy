@@ -1,18 +1,20 @@
 import React from 'react';
+import * as S from './ContactItem.styled';
 
 export default function ContactItem({ item, onDeleteContact }) {
   return (
     <>
-      <div>
-        <img
+      <S.ContactItemContainer>
+        <S.ContactImage
           width={50}
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/542px-Unknown_person.jpg'
         />
-        <p>{item.name}</p>
-        <p>{item.phoneNumber}</p>
-        <button>수정</button>
+        <S.ContactBox>
+          <p>{item.name}</p>
+          <p>{item.phoneNumber}</p>
+        </S.ContactBox>
         <button onClick={() => onDeleteContact(item.id)}>삭제</button>
-      </div>
+      </S.ContactItemContainer>
     </>
   );
 }

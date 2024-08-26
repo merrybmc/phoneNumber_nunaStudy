@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SearchBox from './SearchBox';
 import ContactItem from './ContactItem';
 import { useDispatch, useSelector } from 'react-redux';
+import * as S from './ContactList.styled';
 
 export default function ContactList() {
   const { contactList } = useSelector((state) => state);
@@ -33,7 +34,8 @@ export default function ContactList() {
   };
 
   return (
-    <>
+    <S.ContactListContainer>
+      <S.Title>연락처 조회</S.Title>
       <SearchBox
         searchInput={searchInput}
         setSearchInput={setSearchInput}
@@ -43,6 +45,6 @@ export default function ContactList() {
       {filteredContactList.map((item) => (
         <ContactItem item={item} onDeleteContact={onDeleteContact} />
       ))}
-    </>
+    </S.ContactListContainer>
   );
 }

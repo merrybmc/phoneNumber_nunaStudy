@@ -1,4 +1,5 @@
 import React from 'react';
+import * as S from './SearchBox.styled';
 
 export default function SearchBox({
   searchInput,
@@ -11,17 +12,16 @@ export default function SearchBox({
   };
   return (
     <>
-      <div>
-        <label>이름 또는 전화번호를 입력해주세요.</label>
+      <S.SearchContainer>
         <input
           type='text'
           value={searchInput}
           placeholder='이름을 입력하세요'
           onChange={(e) => handleOnChangeInput(e)}
         />
-      </div>
-      <button onClick={onSearchContact}>찾기</button>
-      <button onClick={onResetContactList}>초기화</button>
+        <button onClick={onSearchContact}>찾기</button>
+        <button onClick={onResetContactList}>초기화</button>
+      </S.SearchContainer>
     </>
   );
 }
